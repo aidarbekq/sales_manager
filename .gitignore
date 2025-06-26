@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# C extensions
+*.pyd
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Env files
+.env
+.env.*
+
+# Pytest cache
+.pytest_cache/
+
+# IDEs/editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Docker
+docker-compose.override.yml
+
+# WeasyPrint cache (if applicable)
+__pycache__/
+*.pdf
+
+# Optional: exclude all media/demo files except the demo video
+media/*
+!media/demo-swagger.mp4
