@@ -58,10 +58,10 @@ cp .env.example .env
 
 2. Запустите контейнеры:
 
-   ```bash
-   docker compose up --build
-   ```
-    > Если вы используете docker-compose, то используйте `docker compose up --build` команду.
+```bash
+docker compose up --build
+```
+> Если вы используете docker-compose, то используйте `docker compose up --build` команду.
 
 
 3. Откройте в браузере:
