@@ -18,6 +18,7 @@ dist/
 
 # Django stuff:
 *.log
+.logs
 *.pot
 *.pyc
 local_settings.py
@@ -51,3 +52,7 @@ __pycache__/
 # Optional: exclude all media/demo files except the demo video
 media/*
 !media/demo-swagger.mp4
+
+# Re-allow PDF files in examples folder
+!examples/*.pdf
+
