@@ -45,15 +45,15 @@
 
 1. Склонируйте репозиторий и скопируйте файл окружения:
 
-   ```bash
-   git clone https://github.com/aidarbekq/sales_manager.git
-      ```
-   ```bash
-   cd sales_manager
-   ```
 ```bash
-   cp .env.example .env
-   ```
+git clone https://github.com/aidarbekq/sales_manager.git
+```
+```bash
+cd sales_manager
+```
+```bash
+cp .env.example .env
+```
 
 
 2. Запустите контейнеры:
@@ -61,12 +61,12 @@
    ```bash
    docker compose up --build
    ```
-    > Если вы используете docker-compose, то вместо `docker compose` используйте `docker-compose`.
+
 
 3. Откройте в браузере:
 
    * **API** `http://localhost:8000/api/`
-   * * **Документация Swagger** `http://localhost:8000/api/docs/`
+   * **Документация Swagger** `http://localhost:8000/api/docs/`
    * **Админка** `http://localhost:8000/admin/`
 
 4. Создайте суперпользователя (в новой вкладке терминала):
