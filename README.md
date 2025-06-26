@@ -61,6 +61,7 @@
    ```bash
    docker compose up --build
    ```
+    > Если вы используете docker-compose, то вместо `docker compose` используйте `docker-compose`.
 
 3. Откройте в браузере:
 
