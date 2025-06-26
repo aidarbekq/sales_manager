@@ -47,9 +47,14 @@
 
    ```bash
    git clone https://github.com/aidarbekq/sales_manager.git
+      ```
+   ```bash
    cd sales_manager
+   ```
+```bash
    cp .env.example .env
    ```
+
 
 2. Запустите контейнеры:
 
@@ -93,9 +98,17 @@ sales_manager/
 
 ```bash
 python -m venv venv && source venv/bin/activate
+```
+```bash
 pip install -r requirements.txt
+```
+```bash
 cp .env.example .env
+```
+```bash
 python manage.py migrate
+```
+```bash
 python manage.py runserver
 ```
 ---
