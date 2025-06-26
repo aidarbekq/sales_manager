@@ -154,3 +154,95 @@ DB_PORT=5432
 
 * **Swagger‑UI**:  [http://localhost:8000/api/schema/swagger-ui/](http://localhost:8000/api/schema/swagger-ui/)
 * **ReDoc**:        [http://localhost:8000/api/schema/redoc/](http://localhost:8000/api/schema/redoc/)
+
+
+## 🔍 Примеры API-запросов
+
+### 📟 Получить список заказов
+
+```bash
+curl -H "Authorization: Bearer <ваш_токен>" http://localhost:8000/api/orders/
+```
+
+📃 Пример ответа:
+
+```json
+[
+  {
+    "id": 1,
+    "customer": 2,
+    "customer_detail": {
+      "id": 2,
+      "full_name": "Алия Асанова",
+      "email": "aliya@example.com",
+      "company_name": "ТОО Пример",
+      "phone": "+996700123456",
+      "created_at": "2025-06-01T12:34:56Z"
+    },
+    "status": "confirmed",
+    "created_at": "2025-06-26T09:10:11Z",
+    "discount_percent": "5.00",
+    "tax_percent": "12.00",
+    "shipping_cost": "0.00",
+    "total": "18000.00",
+    "items": [
+      {
+        "id": 1,
+        "product": 3,
+        "product_detail": {
+          "id": 3,
+          "name": "Принтер Canon",
+          "description": "МФУ с Wi-Fi",
+          "price": "15000.00",
+          "stock_quantity": 10,
+          "is_active": true
+        },
+        "quantity": 1,
+        "subtotal": "15000.00"
+      }
+    ]
+  }
+]
+```
+
+---
+
+### 📅 Создать заказ
+
+```bash
+curl -X POST http://localhost:8000/api/orders/ \
+     -H "Authorization: Bearer <ваш_токен>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "customer": 2,
+  "discount_percent": "5.00",
+  "tax_percent": "12.00",
+  "items": [
+    { "product": 3, "quantity": 2 },
+    { "product": 4, "quantity": 1 }
+  ]
+}'
+```
+
+---
+
+### 🔄 Изменить статус заказа
+
+```bash
+curl -X PATCH http://localhost:8000/api/orders/1/status/ \
+     -H "Authorization: Bearer <ваш_токен>" \
+     -H "Content-Type: application/json" \
+     -d '{ "status": "confirmed" }'
+```
+
+---
+
+### 📄 Скачать PDF-отчёт о продажах
+
+```bash
+curl -X GET "http://localhost:8000/api/reports/sales/?start=2025-06-01&end=2025-06-30" \
+     -H "Authorization: Bearer <ваш_токен>" \
+     --output sales_report.pdf
+```
+
+Ответ: скачивается PDF-файл с отчётом.
